@@ -41,7 +41,7 @@ app:
 # ===============================================================
 schedule:
   enabled: true                         # 是否启用调度系统
-  preset: "morning_evening"             # 预设模板名称（见上方说明）
+  preset: "quiet_night"                     # 夜间静默 + 早间汇总（见 timeline.yaml）
 
 
 # ===============================================================
@@ -316,7 +316,7 @@ notification:
   # 推送渠道配置
   channels:
     feishu:
-      webhook_url: ""                 # 飞书机器人 webhook URL
+      webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/2397c66c-7871-4891-82de-ea58ab8363a5"
 
     dingtalk:
       webhook_url: ""                 # 钉钉机器人 webhook URL
@@ -415,11 +415,11 @@ ai:
   # 完整列表: https://docs.litellm.ai/docs/providers
   # 如果你对于看英文文档比较头疼，那么可以点击页面右下角的 【Ask AI】 ,用中文询问怎么配置 
   
-  model: "deepseek/deepseek-chat"
+  model: "openai/qwen3.6-flash"      # 使用 openai/ 前缀走 OpenAI 兼容协议
 
-  api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: "sk-c0ab428f29c740cf8e5df7770cd00b14"
   
-  api_base: ""                      # 自定义 API 端点（可选，大多数情况留空）
+  api_base: "https://dashscope.aliyuncs.com/compatible-mode/v1"
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
                                     #
                                     # 💡 超级重要：连接任意兼容 OpenAI 协议的模型商
